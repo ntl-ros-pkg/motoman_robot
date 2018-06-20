@@ -13,7 +13,7 @@
   <author email="groadpg@gmail.com">Ryodo Tanaka</author>
 
   <buildtool_depend>catkin</buildtool_depend>
-  <depend>motoman_description</depend>
+  <exec_depend>motoman_description</exec_depend>
   
   <export>
     <metapackage/>
