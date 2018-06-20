@@ -30,7 +30,6 @@ set(MESH_DIRS
 set(URDF_DIRS
   robots/sda5
   robots/sia5
-  robots/sia5/urdf
   urdf
   urdf/sda5
   urdf/sia5
