@@ -26,8 +26,6 @@ set(MESH_DIRS
   meshes/sia5/collision/STL
   meshes/sia5/visual/COLLADA
   meshes/sensor/visual/COLLADA
-  meshes/tool/collision/STL
-  meshes/tool/visual/COLLADA
 )
 set(URDF_DIRS
   robots/sda5
@@ -37,7 +35,6 @@ set(URDF_DIRS
   urdf/sda5
   urdf/sia5
   urdf/sensor
-  urdf/tool
 )
 
 foreach(dir ${LAUNCH_DIRS} ${MESH_DIRS} ${URDF_DIRS})
