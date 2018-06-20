@@ -1,0 +1,4 @@
+- git:
+    local-name: dhand_ros_pkg
+    uri: https://github.com/Nishida-Lab/dhand_ros_pkg
+    version: master
