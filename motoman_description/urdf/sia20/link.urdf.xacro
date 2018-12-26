@@ -1,10 +1,15 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
   
-  <xacro:macro name="link_v0" params="suffix
+  <xacro:macro name="link_v1" params="suffix
                                       parent
+                                      mass
+                                      height
+                                      width
+                                      depth
                                       *joint_origin
-                                      *joint_limit">
+                                      *joint_limit
+                                      *inertial_origin">
     <link name="link_${suffix}">
       <visual>
         <geometry>
@@ -16,6 +21,11 @@
           <mesh filename="package://motoman_description/meshes/sia20/link_${suffix}/collision.stl"/>
         </geometry>
       </collision>
+      <inertial>
+        <xacro:box_inertial mass="${mass}" height="${height}" width="${width}" depth="${depth}">
+          <insert_block name="inertial_origin"/>
+        </xacro:box_inertial>
+      </inertial>
     </link>
 
     <joint name="joint_${suffix}" type="revolute">
