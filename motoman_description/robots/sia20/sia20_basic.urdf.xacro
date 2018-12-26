@@ -57,35 +57,40 @@
   </xacro:link_v0>
   <!-- Link L -->
   <xacro:link_v0 suffix="l" parent="link_s">
-    <origin xyz="0 0 0.298"/>
+    <origin xyz="0 0 0.298" rpy="${M_PI/2} 0 0"/>
     <limit effort="100.0" lower="${joint_l_lower_limit}"
            upper="${joint_l_upper_limit}" velocity="${joint_l_velocity_limit}"/>
   </xacro:link_v0>
-  <!-- <xacro:link_v0 suffix="s" parent="base_link"> -->
-  <!--   <origin xyz="0 0 0.112"/> -->
-  <!--   <limit effort="100.0" lower="${joint_s_lower_limit}" -->
-  <!--          upper="${joint_s_upper_limit}" velocity="${joint_s_velocity_limit}"/> -->
-  <!-- </xacro:link_v0> -->
-  <!-- <xacro:link_v0 suffix="s" parent="base_link"> -->
-  <!--   <origin xyz="0 0 0.112"/> -->
-  <!--   <limit effort="100.0" lower="${joint_s_lower_limit}" -->
-  <!--          upper="${joint_s_upper_limit}" velocity="${joint_s_velocity_limit}"/> -->
-  <!-- </xacro:link_v0> -->
-  <!-- <xacro:link_v0 suffix="s" parent="base_link"> -->
-  <!--   <origin xyz="0 0 0.112"/> -->
-  <!--   <limit effort="100.0" lower="${joint_s_lower_limit}" -->
-  <!--          upper="${joint_s_upper_limit}" velocity="${joint_s_velocity_limit}"/> -->
-  <!-- </xacro:link_v0> -->
-  <!-- <xacro:link_v0 suffix="s" parent="base_link"> -->
-  <!--   <origin xyz="0 0 0.112"/> -->
-  <!--   <limit effort="100.0" lower="${joint_s_lower_limit}" -->
-  <!--          upper="${joint_s_upper_limit}" velocity="${joint_s_velocity_limit}"/> -->
-  <!-- </xacro:link_v0> -->
-  <!-- <xacro:link_v0 suffix="s" parent="base_link"> -->
-  <!--   <origin xyz="0 0 0.112"/> -->
-  <!--   <limit effort="100.0" lower="${joint_s_lower_limit}" -->
-  <!--          upper="${joint_s_upper_limit}" velocity="${joint_s_velocity_limit}"/> -->
-  <!-- </xacro:link_v0> -->
+  <!-- Link E -->
+  <xacro:link_v0 suffix="e" parent="link_l">
+    <origin xyz="0 0.266 0" rpy="${-M_PI/2} 0 0"/>
+    <limit effort="100.0" lower="${joint_e_lower_limit}"
+           upper="${joint_e_upper_limit}" velocity="${joint_e_velocity_limit}"/>
+  </xacro:link_v0>
+  <!-- Link U -->
+  <xacro:link_v0 suffix="u" parent="link_e">
+    <origin xyz="0 0 0.224" rpy="${M_PI/2} 0 0"/>
+    <limit effort="100.0" lower="${joint_u_lower_limit}"
+           upper="${joint_u_upper_limit}" velocity="${joint_u_velocity_limit}"/>
+  </xacro:link_v0>
+  <!-- Link R -->
+  <xacro:link_v0 suffix="r" parent="link_u">
+    <origin xyz="0 0.264 0" rpy="${-M_PI/2} 0 0"/>
+    <limit effort="100.0" lower="${joint_r_lower_limit}"
+           upper="${joint_r_upper_limit}" velocity="${joint_r_velocity_limit}"/>
+  </xacro:link_v0>
+  <!-- Link B -->
+  <xacro:link_v0 suffix="b" parent="link_r">
+    <origin xyz="0 0 0.156" rpy="${M_PI/2} 0 0"/>
+    <limit effort="100.0" lower="${joint_b_lower_limit}"
+           upper="${joint_b_upper_limit}" velocity="${joint_b_velocity_limit}"/>
+  </xacro:link_v0>
+  <!-- Link T -->
+  <xacro:link_v0 suffix="t" parent="link_b">
+    <origin xyz="0 0.167 0" rpy="${-M_PI/2} 0 0"/>
+    <limit effort="100.0" lower="${joint_t_lower_limit}"
+           upper="${joint_t_upper_limit}" velocity="${joint_t_velocity_limit}"/>
+  </xacro:link_v0>
 
 
 </robot>

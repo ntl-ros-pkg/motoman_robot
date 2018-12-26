@@ -5,8 +5,8 @@
       <author>Blender User</author>
       <authoring_tool>Blender 2.79.0</authoring_tool>
     </contributor>
-    <created>2018-12-26T10:32:57</created>
-    <modified>2018-12-26T10:32:57</modified>
+    <created>2018-12-26T10:10:27</created>
+    <modified>2018-12-26T10:10:27</modified>
     <unit name="meter" meter="1"/>
     <up_axis>Z_UP</up_axis>
   </asset>
@@ -108,7 +108,7 @@
         <technique sid="common">
           <phong>
             <emission>
-              <color sid="emission">0 0 0 1</color>
+              <color sid="emission">0.45 0.45 0.45 1</color>
             </emission>
             <ambient>
               <color sid="ambient">0 0 0 1</color>
