@@ -11,6 +11,8 @@ set(LAUNCH_DIRS
   launch/sda5/rviz
   launch/sia5
   launch/sia5/rviz
+  launch/sia20
+  launch/sia20/rviz
 )
 set(MESH_DIRS
   meshes/sda5/collision
@@ -26,13 +28,24 @@ set(MESH_DIRS
   meshes/sia5/collision/STL
   meshes/sia5/visual/COLLADA
   meshes/sensor/visual/COLLADA
+  meshes/sia20/base_link
+  meshes/sia20/link_s
+  meshes/sia20/link_l
+  meshes/sia20/link_e
+  meshes/sia20/link_u
+  meshes/sia20/link_r
+  meshes/sia20/link_b
+  meshes/sia20/link_t
 )
 set(URDF_DIRS
   robots/sda5
   robots/sia5
+  robots/sia20
   urdf
   urdf/sda5
   urdf/sia5
+  urdf/sia20/base_link
+  urdf/sia20/link
   urdf/sensor
 )
 
@@ -48,5 +61,6 @@ if (CATKIN_ENABLE_TESTING)
   find_package(roslaunch REQUIRED)
   roslaunch_add_file_check(launch/sda5)
   roslaunch_add_file_check(launch/sia5)
+  roslaunch_add_file_check(launch/sia20)
 endif()
 
