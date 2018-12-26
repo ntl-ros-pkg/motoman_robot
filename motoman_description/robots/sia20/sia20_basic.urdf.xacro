@@ -74,4 +74,12 @@
     <origin xyz="0 0 ${0.0158/2}"/>
   </xacro:link_v1>
 
+  <!-- Add Gazebo plugin -->
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+    </plugin>
+  </gazebo>
+
+  
 </robot>
