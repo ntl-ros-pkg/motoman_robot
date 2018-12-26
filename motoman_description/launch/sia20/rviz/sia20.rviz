@@ -99,6 +99,10 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
+        world:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
       Name: RobotModel
       Robot Description: robot_description
       TF Prefix: ""
@@ -126,28 +130,31 @@ Visualization Manager:
           Value: true
         link_u:
           Value: true
+        world:
+          Value: true
       Marker Scale: 1
       Name: TF
       Show Arrows: true
       Show Axes: true
       Show Names: true
       Tree:
-        base_link:
-          link_s:
-            link_l:
-              link_e:
-                link_u:
-                  link_r:
-                    link_b:
-                      link_t:
-                        {}
+        world:
+          base_link:
+            link_s:
+              link_l:
+                link_e:
+                  link_u:
+                    link_r:
+                      link_b:
+                        link_t:
+                          {}
       Update Interval: 0
       Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
     Default Light: true
-    Fixed Frame: base_link
+    Fixed Frame: world
     Frame Rate: 30
   Name: root
   Tools:
