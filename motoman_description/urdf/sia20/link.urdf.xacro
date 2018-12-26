@@ -7,13 +7,11 @@
                                       *joint_limit">
     <link name="link_${suffix}">
       <visual>
-        <origin rpy="${M_PI/2} 0 0"/>
         <geometry>
           <mesh filename="package://motoman_description/meshes/sia20/link_${suffix}/visual.dae"/>
         </geometry>
       </visual>
       <collision>
-        <origin rpy="${M_PI/2} 0 0"/>
         <geometry>
           <mesh filename="package://motoman_description/meshes/sia20/link_${suffix}/collision.stl"/>
         </geometry>
