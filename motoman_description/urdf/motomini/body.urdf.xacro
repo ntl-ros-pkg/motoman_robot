@@ -1,13 +1,13 @@
 <?xml version="1.0" ?>
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
 
-  <xacro:macro name="link_v0" params="link_name">
+  <xacro:macro name="link_v0" params="link_name color">
     <link name="${link_name}">
       <visual>
         <geometry>
           <mesh filename="package://motoman_description/meshes/motomini/visual/${link_name}.stl"/>
         </geometry>
-        <material name="yaskawa_blue"/>
+        <material name="${color}"/>
       </visual>
       <collision>
         <geometry>

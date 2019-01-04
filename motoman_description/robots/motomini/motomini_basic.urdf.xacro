@@ -1,23 +1,20 @@
 <?xml version="1.0" ?>
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
-  <!-- Properties -->
-  <material name="yaskawa_blue">
-    <color rgba="0.12941 0.14902 0.74902 1" />
-  </material>
-
   <!-- File Include -->
+  <xacro:include filename="$(find motoman_description)/urdf/common.xacro"/>
+  <xacro:include filename="$(find motoman_description)/urdf/materials.xacro"/>
   <xacro:include filename="$(find motoman_description)/urdf/motomini/body.urdf.xacro"/>
 
   <!-- Configuration -->
   <xacro:macro name="motoman_motomini" params="prefix"> 
     <!-- link list -->
-    <xacro:link_v0 link_name="${prefix}base_link" />
-    <xacro:link_v0 link_name="${prefix}link_1_s" />
-    <xacro:link_v0 link_name="${prefix}link_2_l" />
-    <xacro:link_v0 link_name="${prefix}link_3_u" />
-    <xacro:link_v0 link_name="${prefix}link_4_r" />
-    <xacro:link_v0 link_name="${prefix}link_5_b" />
-    <xacro:link_v0 link_name="${prefix}link_6_t" />
+    <xacro:link_v0 link_name="${prefix}base_link" color="yaskawa_blue" />
+    <xacro:link_v0 link_name="${prefix}link_1_s" color="yaskawa_blue"/>
+    <xacro:link_v0 link_name="${prefix}link_2_l" color="yaskawa_blue"/>
+    <xacro:link_v0 link_name="${prefix}link_3_u" color="yaskawa_blue"/>
+    <xacro:link_v0 link_name="${prefix}link_4_r" color="yaskawa_blue"/>
+    <xacro:link_v0 link_name="${prefix}link_5_b" color="yaskawa_blue"/>
+    <xacro:link_v0 link_name="${prefix}link_6_t" color="yaskawa_blue"/>
     <link name="tool0"/>
     <!-- end of link list -->
 

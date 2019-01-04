@@ -33,4 +33,8 @@
     <color rgba="1.0 1.0 1.0 1.0"/>
   </material>
 
+  <material name="yaskawa_blue">
+    <color rgba="0.12941 0.14902 0.74902 1" />
+  </material>
+
 </robot>
