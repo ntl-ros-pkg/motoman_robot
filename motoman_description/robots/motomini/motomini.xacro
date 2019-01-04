@@ -1,5 +1,6 @@
 <?xml version="1.0" ?>
 <robot name="motoman_motomini" xmlns:xacro="http://ros.org/wiki/xacro">
-  <xacro:include filename="$(find motoman_motomini_support)/urdf/motomini_macro.xacro" />
+  <!--xacro:include filename="$(find motoman_description)/urdf/motomini/body.urdf.xacro" /-->
+  <xacro:include filename="$(find motoman_description)/robots/motomini/motomini_basic.urdf.xacro" />
   <xacro:motoman_motomini prefix=""/>
 </robot>

@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:macro name="link_v0" params="link_name">
+    <link name="${link_name}">
+      <visual>
+        <geometry>
+          <mesh filename="package://motoman_motomini_support/meshes/motomini/visual/${link_name}.stl"/>
+        </geometry>
+        <material name="yaskawa_blue"/>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://motoman_motomini_support/meshes/motomini/collision/${link_name}.stl"/>
+        </geometry>
+      </collision>
+    </link>
+  </xacro:macro>
+  <xacro:macro name="joint_v0"
+               params="joint_name parent_link_name child_link_name
+               origin_xyz origin_rpy axis_xyz
+               llimit ulimit elimit vlimit">
+      <joint name="${joint_name}" type="revolute">
+      <parent link="${parent_link_name}"/>
+      <child link="${child_link_name}"/>
+      <origin xyz="${origin_xyz}" rpy="${origin_rpy}" />
+      <axis xyz="${axis_xyz}" />
+      <limit lower="${llimit}" upper="${ulimit}" effort="${elimit}" velocity="${vlimit}"/>
+    </joint>
+  </xacro:macro>
+
+</robot>
+
