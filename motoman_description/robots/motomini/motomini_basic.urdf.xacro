@@ -7,14 +7,40 @@
 
   <!-- Configuration -->
   <xacro:macro name="motoman_motomini" params="prefix"> 
+    <property name="base_link_volume" value="0.00030" />
+    <property name="link_1_s_volume"  value="0.00030" />
+    <property name="link_2_l_volume"  value="0.00030" />
+    <property name="link_3_u_volume"  value="0.00010" />
+    <property name="link_4_r_volume"  value="0.00010" />
+    <property name="link_5_b_volume"  value="0.00010" />
+    <property name="link_6_t_volume"  value="0.00013" />
+    <property name="sum_volume" value="${base_link_volume
+                                       + link_1_s_volume  + link_2_l_volume
+                                       + link_3_u_volume  + link_4_r_volume
+                                       + link_5_b_volume  + link_6_t_volume}" />
     <!-- link list -->
-    <xacro:link_v0 link_name="${prefix}base_link" color="yaskawa_blue" />
-    <xacro:link_v0 link_name="${prefix}link_1_s" color="yaskawa_blue"/>
-    <xacro:link_v0 link_name="${prefix}link_2_l" color="yaskawa_blue"/>
-    <xacro:link_v0 link_name="${prefix}link_3_u" color="yaskawa_blue"/>
-    <xacro:link_v0 link_name="${prefix}link_4_r" color="yaskawa_blue"/>
-    <xacro:link_v0 link_name="${prefix}link_5_b" color="yaskawa_blue"/>
-    <xacro:link_v0 link_name="${prefix}link_6_t" color="yaskawa_blue"/>
+    <!--xacro:link_v0 link_name="${prefix}base_link" color="yaskawa_blue" /-->
+    <xacro:link_box_v0 link_name="${prefix}base_link" mass="${base_link_volume/sum_volume}"
+        width="0.124" depth="0.2246" height="0.1005"
+        origin_xyz="0 0 0" origin_rpy="0 0 0" color="yaskawa_blue" />
+    <xacro:link_box_v0 link_name="${prefix}link_1_s" mass="${link_1_s_volume/sum_volume}"
+        width="0.119" depth="0.1205" height="0.1435"
+        origin_xyz="0 0 0" origin_rpy="0 0 0" color="yaskawa_blue"/>
+    <xacro:link_box_v0 link_name="${prefix}link_2_l" mass="${link_2_l_volume/sum_volume}"
+        width="0.1072" depth="0.2430" height="0.1338"
+        origin_xyz="0 0 0" origin_rpy="0 0 0" color="yaskawa_blue"/>
+    <xacro:link_box_v0 link_name="${prefix}link_3_u" mass="${link_3_u_volume/sum_volume}"
+        width="0.0730" depth="0.1078" height="0.0855"
+        origin_xyz="0 0 0" origin_rpy="0 0 0" color="yaskawa_blue"/>
+    <xacro:link_box_v0 link_name="${prefix}link_4_r" mass="${link_4_r_volume/sum_volume}"
+        width="0.0943" depth="0.0930" height="0.1885"
+        origin_xyz="0 0 0" origin_rpy="0 0 0" color="yaskawa_blue"/>
+    <xacro:link_box_v0 link_name="${prefix}link_5_b" mass="${link_5_b_volume/sum_volume}"
+        width="0.0700" depth="0.0797" height="0.0571"
+        origin_xyz="0 0 0" origin_rpy="0 0 0" color="yaskawa_blue"/>
+    <xacro:link_box_v0 link_name="${prefix}link_6_t" mass="${link_6_t_volume/sum_volume}"
+        width="0.0300" depth="0.0300" height="0.0190" 
+        origin_xyz="0 0 0" origin_rpy="0 0 0" color="yaskawa_blue"/>
     <link name="tool0"/>
     <!-- end of link list -->
 
