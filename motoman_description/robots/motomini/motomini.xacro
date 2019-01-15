@@ -4,6 +4,6 @@
   <xacro:include filename="$(find motoman_description)/robots/motomini/motomini_basic.urdf.xacro" />
   <xacro:motoman_motomini prefix=""/>
   <xacro:add_world>
-    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <origin xyz="0 0 0.067" rpy="0 0 0"/>
   </xacro:add_world>
 </robot>
