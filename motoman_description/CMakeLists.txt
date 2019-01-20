@@ -7,6 +7,8 @@ catkin_package()
 # Install #
 ###########
 set(LAUNCH_DIRS
+  launch/motomini
+  launch/motomini/rviz
   launch/sda5
   launch/sda5/rviz
   launch/sia5
@@ -15,6 +17,8 @@ set(LAUNCH_DIRS
   launch/sia20/rviz
 )
 set(MESH_DIRS
+  meshes/motomini/collision
+  meshes/motomini/visual
   meshes/sda5/collision
   meshes/sda5/visual/base_link
   meshes/sda5/visual/link_b
@@ -36,17 +40,21 @@ set(MESH_DIRS
   meshes/sia20/link_r
   meshes/sia20/link_b
   meshes/sia20/link_t
+  meshes/tool
 )
 set(URDF_DIRS
+  robots/motomini
   robots/sda5
   robots/sia5
   robots/sia20
   urdf
+  urdf/motomini
   urdf/sda5
   urdf/sia5
   urdf/sia20/base_link
   urdf/sia20/link
   urdf/sensor
+  urdf/tool
 )
 
 foreach(dir ${LAUNCH_DIRS} ${MESH_DIRS} ${URDF_DIRS})
@@ -59,6 +67,7 @@ endforeach(dir)
 ########
 if (CATKIN_ENABLE_TESTING)
   find_package(roslaunch REQUIRED)
+  roslaunch_add_file_check(launch/motomini)
   roslaunch_add_file_check(launch/sda5)
   roslaunch_add_file_check(launch/sia5)
   roslaunch_add_file_check(launch/sia20)
