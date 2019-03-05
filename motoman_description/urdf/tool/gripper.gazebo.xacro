@@ -9,7 +9,7 @@
     <gazebo reference="${name}_palm_link">
       <material>Gazebo/Black</material>
       <turnGravityOff>false</turnGravityOff>
-      <selfCollide>true</selfCollide>
+      <selfCollide>false</selfCollide>
     </gazebo>
     
     <gazebo reference="${name}_finger_l_link">
