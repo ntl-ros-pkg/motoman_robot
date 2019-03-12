@@ -4,6 +4,8 @@
   <xacro:include filename="$(find motoman_description)/urdf/sensor/kinect.urdf.xacro"/>
   <xacro:include filename="$(find motoman_description)/urdf/sensor/kinect.gazebo.xacro"/>
   <xacro:include filename="$(find motoman_description)/urdf/tool/gripper.urdf.xacro" />
+  <xacro:include filename="$(find motoman_description)/urdf/tool/gzplugin_grasp_fix.urdf.xacro"/>
+  <xacro:gzplugin_grasp_fix/>
   <xacro:include filename="$(find motoman_description)/robots/motomini/motomini.urdf.xacro"/>
 
   <!-- add gripper -->
