@@ -8,5 +8,5 @@
     version: master
 - git:
     local-name: gazebo-pkgs
-    uri: https://github.com/MoriKen254/gazebo-pkgs
-    version: add-inst
+    uri: https://github.com/JenniferBuehler/gazebo-pkgs
+    version: master
