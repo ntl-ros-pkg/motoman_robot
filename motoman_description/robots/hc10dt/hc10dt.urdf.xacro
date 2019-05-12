@@ -48,68 +48,68 @@
              izz="0.048"/>
     <origin xyz="0 0 0.167" rpy="0 0 0"/>
     <axis xyz="0 0 1"/>
-    <limit effort="30.0" lower="${joint_s_lower_limit}" upper="${joint_s_upper_limit}" velocity="${joint_s_velocity_limit}"/>
+    <limit effort="100.0" lower="${joint_s_lower_limit}" upper="${joint_s_upper_limit}" velocity="${joint_s_velocity_limit}"/>
   </xacro:link_v1>
 
   <xacro:link_v1 name="link_l"
-                 mass="9.260846"
+                 mass="14.232"
                  parent_link_name="link_s" child_link_name="link_l" joint_name="joint_l">
     <inertia ixx="2.518" ixy="0.000" ixz="0.000"
              iyy="0.130" iyz="-0.328"
              izz="2.418"/>
     <origin xyz="0 -0.107 0.108" rpy="${M_PI/2} 0 0"/>
     <axis xyz="0 0 1"/>
-    <limit effort="30.0" lower="${joint_l_lower_limit}" upper="${joint_l_upper_limit}" velocity="${joint_l_velocity_limit}"/>
+    <limit effort="100.0" lower="${joint_l_lower_limit}" upper="${joint_l_upper_limit}" velocity="${joint_l_velocity_limit}"/>
   </xacro:link_v1>
 
   <xacro:link_v1 name="link_u"
-                 mass="9.260846"
+                 mass="5.964"
                  parent_link_name="link_l" child_link_name="link_u" joint_name="joint_u">
     <inertia ixx="0.070" ixy="0.001" ixz="-0.004"
              iyy="0.068" iyz="-0.007"
              izz="0.025"/>
     <origin xyz="0 0.7 -0.01" rpy="0 0 0"/>
     <axis xyz="0 0 1"/>
-    <limit effort="30.0" lower="${joint_u_lower_limit}" upper="${joint_u_upper_limit}" velocity="${joint_u_velocity_limit}"/>
+    <limit effort="100.0" lower="${joint_u_lower_limit}" upper="${joint_u_upper_limit}" velocity="${joint_u_velocity_limit}"/>
   </xacro:link_v1>
 
   <xacro:link_v1 name="link_r"
-                 mass="9.260846"
+                 mass="4.849"
                  parent_link_name="link_u" child_link_name="link_r" joint_name="joint_r">
     <inertia ixx="0.347" ixy="0.000" ixz="0.000"
              iyy="0.347" iyz="0.002"
              izz="0.007"/>
     <origin xyz="0 -0.106 -0.097" rpy="-${M_PI/2} 0 0"/>
     <axis xyz="0 0 1"/>
-    <limit effort="30.0" lower="${joint_r_lower_limit}" upper="${joint_r_upper_limit}" velocity="${joint_r_velocity_limit}"/>
+    <limit effort="100.0" lower="${joint_r_lower_limit}" upper="${joint_r_upper_limit}" velocity="${joint_r_velocity_limit}"/>
   </xacro:link_v1>
 
     <xacro:link_v1 name="link_b"
-                 mass="9.260846"
+                 mass="5.454"
                  parent_link_name="link_r" child_link_name="link_b" joint_name="joint_b">
     <inertia ixx="0.074" ixy="0.060" ixz="0.028"
              iyy="0.000" iyz="0.013"
              izz="0.000"/>
     <origin xyz="0 0.064 -0.393" rpy="${M_PI/2} 0 0"/>
     <axis xyz="0 0 1"/>
-    <limit effort="30.0" lower="${joint_b_lower_limit}" upper="${joint_b_upper_limit}" velocity="${joint_b_velocity_limit}"/>
+    <limit effort="100.0" lower="${joint_b_lower_limit}" upper="${joint_b_upper_limit}" velocity="${joint_b_velocity_limit}"/>
   </xacro:link_v1>
 
   <xacro:link_v1 name="link_t"
-                 mass="9.260846"
+                 mass="0.705"
                  parent_link_name="link_b" child_link_name="link_t" joint_name="joint_t">
     <inertia ixx="0.001" ixy="0.000" ixz="0.000"
              iyy="0.001" iyz="0.000"
              izz="0.001"/>
     <origin xyz="0 -0.1 -0.098" rpy="${M_PI/2} 0 0"/>
     <axis xyz="0 0 1"/>
-    <limit effort="30.0" lower="${joint_t_lower_limit}" upper="${joint_t_upper_limit}" velocity="${joint_t_velocity_limit}"/>
+    <limit effort="100.0" lower="${joint_t_lower_limit}" upper="${joint_t_upper_limit}" velocity="${joint_t_velocity_limit}"/>
   </xacro:link_v1>
 
 
 <!--   <joint name="joint_tool0" type="fixed">
     <origin rpy="0 0 0" xyz="0 0 0"/>
-    <parent link="link_6"/>
+    <parent link="link_t"/>
     <child link="tool0"/>
   </joint>
  -->
