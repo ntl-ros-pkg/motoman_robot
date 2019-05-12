@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:macro name="base_link_v1" params="name mass *inertia">
+    <link name="${name}">
+      <visual>
+        <geometry>
+          <mesh filename="package://motoman_description/meshes/hc10dt/visual/${name}.dae"/>
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://motoman_description/meshes/hc10dt/collision/${name}.stl"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="${mass}"/>
+        <insert_block name="inertia"/>
+      </inertial>
+    </link>
+  </xacro:macro>
+
+  <xacro:macro name="link_v1" params="name mass parent_link_name child_link_name joint_name *inertia *joint_origin *joint_axis *joint_limit">
+    <link name="${name}">
+      <visual>
+        <geometry>
+          <mesh filename="package://motoman_description/meshes/hc10dt/visual/${name}.dae"/>
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://motoman_description/meshes/hc10dt/collision/${name}.stl"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="${mass}"/>
+        <insert_block name="inertia"/>
+      </inertial>
+    </link>
+
+    <joint name="${joint_name}" type="revolute">
+      <insert_block name="joint_origin"/>
+      <parent link="${parent_link_name}"/>
+      <child link="${child_link_name}"/>
+      <insert_block name="joint_axis"/>
+      <dynamics dampint="0.7" friction="0.7"/>
+      <insert_block name="joint_limit"/>
+    </joint>
+  </xacro:macro>
+</robot>
