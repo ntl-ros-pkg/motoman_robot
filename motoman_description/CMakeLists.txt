@@ -7,6 +7,7 @@ catkin_package()
 # Install #
 ###########
 set(LAUNCH_DIRS
+  launch/hc10dt
   launch/motomini
   launch/motomini/rviz
   launch/sda5
@@ -17,6 +18,8 @@ set(LAUNCH_DIRS
   launch/sia20/rviz
 )
 set(MESH_DIRS
+  meshes/hc10dt/collision
+  meshes/hc10dt/visual
   meshes/motomini/collision
   meshes/motomini/visual
   meshes/sda5/collision
@@ -43,11 +46,13 @@ set(MESH_DIRS
   meshes/tool
 )
 set(URDF_DIRS
+  robots/hc10dt
   robots/motomini
   robots/sda5
   robots/sia5
   robots/sia20
   urdf
+  urdf/hc10dt
   urdf/motomini
   urdf/sda5
   urdf/sia5
@@ -67,6 +72,7 @@ endforeach(dir)
 ########
 if (CATKIN_ENABLE_TESTING)
   find_package(roslaunch REQUIRED)
+  roslaunch_add_file_check(launch/hc10dt)
   roslaunch_add_file_check(launch/motomini)
   roslaunch_add_file_check(launch/sda5)
   roslaunch_add_file_check(launch/sia5)
