@@ -17,12 +17,6 @@
         <insert_block name="inertia"/>
       </inertial>
     </link>
-
-  <link name="world"/>
-  <joint name="world" type="fixed">
-    <parent link="world"/>
-    <child link="${name}"/>
-  </joint>
   </xacro:macro>
 
   <xacro:macro name="link_v1" params="name mass parent_link_name child_link_name joint_name *inertia *joint_origin *joint_axis *joint_limit">
