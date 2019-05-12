@@ -28,6 +28,9 @@
   <material name="white">
     <color rgba="1.0 1.0 1.0 1.0"/>
   </material>
+  <material name="yaskawa_blue">
+    <color rgba="0.12941 0.14902 0.74902 1"/>
+  </material>
   <link name="base_link">
     <visual>
       <geometry>
@@ -44,20 +47,15 @@
       <inertia ixx="0.072" ixy="0.000" ixz="0.003" iyy="0.079" iyz="-0.000" izz="0.052"/>
     </inertial>
   </link>
-  <link name="world"/>
-  <joint name="world" type="fixed">
-    <parent link="world"/>
-    <child link="base_link"/>
-  </joint>
-  <link name="link_s">
+  <link name="link_1_s">
     <visual>
       <geometry>
-        <mesh filename="package://motoman_description/meshes/hc10dt/visual/link_s.dae"/>
+        <mesh filename="package://motoman_description/meshes/hc10dt/visual/link_1_s.dae"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://motoman_description/meshes/hc10dt/collision/link_s.stl"/>
+        <mesh filename="package://motoman_description/meshes/hc10dt/collision/link_1_s.stl"/>
       </geometry>
     </collision>
     <inertial>
@@ -65,205 +63,205 @@
       <inertia ixx="0.132" ixy="-0.001" ixz="0.001" iyy="0.128" iyz="0.012" izz="0.048"/>
     </inertial>
   </link>
-  <joint name="joint_s" type="revolute">
+  <joint name="joint_1_s" type="revolute">
     <origin rpy="0 0 0" xyz="0 0 0.167"/>
     <parent link="base_link"/>
-    <child link="link_s"/>
+    <child link="link_1_s"/>
     <axis xyz="0 0 1"/>
     <dynamics dampint="0.7" friction="0.7"/>
-    <limit effort="30.0" lower="-3.14159274" upper="3.14159274" velocity="2.26892809"/>
+    <limit effort="100.0" lower="-3.14159274" upper="3.14159274" velocity="2.26892809"/>
   </joint>
-  <link name="link_l">
+  <link name="link_2_l">
     <visual>
       <geometry>
-        <mesh filename="package://motoman_description/meshes/hc10dt/visual/link_l.dae"/>
+        <mesh filename="package://motoman_description/meshes/hc10dt/visual/link_2_l.dae"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://motoman_description/meshes/hc10dt/collision/link_l.stl"/>
+        <mesh filename="package://motoman_description/meshes/hc10dt/collision/link_2_l.stl"/>
       </geometry>
     </collision>
     <inertial>
-      <mass value="9.260846"/>
+      <mass value="14.232"/>
       <inertia ixx="2.518" ixy="0.000" ixz="0.000" iyy="0.130" iyz="-0.328" izz="2.418"/>
     </inertial>
   </link>
-  <joint name="joint_l" type="revolute">
+  <joint name="joint_2_l" type="revolute">
     <origin rpy="1.57079637 0 0" xyz="0 -0.107 0.108"/>
-    <parent link="link_s"/>
-    <child link="link_l"/>
+    <parent link="link_1_s"/>
+    <child link="link_2_l"/>
     <axis xyz="0 0 1"/>
     <dynamics dampint="0.7" friction="0.7"/>
-    <limit effort="30.0" lower="-3.14159274" upper="3.14159274" velocity="2.26892809"/>
+    <limit effort="100.0" lower="-3.14159274" upper="3.14159274" velocity="2.26892809"/>
   </joint>
-  <link name="link_u">
+  <link name="link_3_u">
     <visual>
       <geometry>
-        <mesh filename="package://motoman_description/meshes/hc10dt/visual/link_u.dae"/>
+        <mesh filename="package://motoman_description/meshes/hc10dt/visual/link_3_u.dae"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://motoman_description/meshes/hc10dt/collision/link_u.stl"/>
+        <mesh filename="package://motoman_description/meshes/hc10dt/collision/link_3_u.stl"/>
       </geometry>
     </collision>
     <inertial>
-      <mass value="9.260846"/>
+      <mass value="5.964"/>
       <inertia ixx="0.070" ixy="0.001" ixz="-0.004" iyy="0.068" iyz="-0.007" izz="0.025"/>
     </inertial>
   </link>
-  <joint name="joint_u" type="revolute">
+  <joint name="joint_3_u" type="revolute">
     <origin rpy="0 0 0" xyz="0 0.7 -0.01"/>
-    <parent link="link_l"/>
-    <child link="link_u"/>
+    <parent link="link_2_l"/>
+    <child link="link_3_u"/>
     <axis xyz="0 0 1"/>
     <dynamics dampint="0.7" friction="0.7"/>
-    <limit effort="30.0" lower="-0.087266465" upper="6.195919015" velocity="3.14159274"/>
+    <limit effort="100.0" lower="-0.087266465" upper="6.195919015" velocity="3.14159274"/>
   </joint>
-  <link name="link_r">
+  <link name="link_4_r">
     <visual>
       <geometry>
-        <mesh filename="package://motoman_description/meshes/hc10dt/visual/link_r.dae"/>
+        <mesh filename="package://motoman_description/meshes/hc10dt/visual/link_4_r.dae"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://motoman_description/meshes/hc10dt/collision/link_r.stl"/>
+        <mesh filename="package://motoman_description/meshes/hc10dt/collision/link_4_r.stl"/>
       </geometry>
     </collision>
     <inertial>
-      <mass value="9.260846"/>
+      <mass value="4.849"/>
       <inertia ixx="0.347" ixy="0.000" ixz="0.000" iyy="0.347" iyz="0.002" izz="0.007"/>
     </inertial>
   </link>
-  <joint name="joint_r" type="revolute">
+  <joint name="joint_4_r" type="revolute">
     <origin rpy="-1.57079637 0 0" xyz="0 -0.106 -0.097"/>
-    <parent link="link_u"/>
-    <child link="link_r"/>
+    <parent link="link_3_u"/>
+    <child link="link_4_r"/>
     <axis xyz="0 0 1"/>
     <dynamics dampint="0.7" friction="0.7"/>
-    <limit effort="30.0" lower="-3.14159274" upper="3.14159274" velocity="3.14159274"/>
+    <limit effort="100.0" lower="-3.14159274" upper="3.14159274" velocity="3.14159274"/>
   </joint>
-  <link name="link_b">
+  <link name="link_5_b">
     <visual>
       <geometry>
-        <mesh filename="package://motoman_description/meshes/hc10dt/visual/link_b.dae"/>
+        <mesh filename="package://motoman_description/meshes/hc10dt/visual/link_5_b.dae"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://motoman_description/meshes/hc10dt/collision/link_b.stl"/>
+        <mesh filename="package://motoman_description/meshes/hc10dt/collision/link_5_b.stl"/>
       </geometry>
     </collision>
     <inertial>
-      <mass value="9.260846"/>
+      <mass value="5.454"/>
       <inertia ixx="0.074" ixy="0.060" ixz="0.028" iyy="0.000" iyz="0.013" izz="0.000"/>
     </inertial>
   </link>
-  <joint name="joint_b" type="revolute">
+  <joint name="joint_5_b" type="revolute">
     <origin rpy="1.57079637 0 0" xyz="0 0.064 -0.393"/>
-    <parent link="link_r"/>
-    <child link="link_b"/>
+    <parent link="link_4_r"/>
+    <child link="link_5_b"/>
     <axis xyz="0 0 1"/>
     <dynamics dampint="0.7" friction="0.7"/>
-    <limit effort="30.0" lower="-3.14159274" upper="3.14159274" velocity="4.36332325"/>
+    <limit effort="100.0" lower="-3.14159274" upper="3.14159274" velocity="4.36332325"/>
   </joint>
-  <link name="link_t">
+  <link name="link_6_t">
     <visual>
       <geometry>
-        <mesh filename="package://motoman_description/meshes/hc10dt/visual/link_t.dae"/>
+        <mesh filename="package://motoman_description/meshes/hc10dt/visual/link_6_t.dae"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://motoman_description/meshes/hc10dt/collision/link_t.stl"/>
+        <mesh filename="package://motoman_description/meshes/hc10dt/collision/link_6_t.stl"/>
       </geometry>
     </collision>
     <inertial>
-      <mass value="9.260846"/>
+      <mass value="0.705"/>
       <inertia ixx="0.001" ixy="0.000" ixz="0.000" iyy="0.001" iyz="0.000" izz="0.001"/>
     </inertial>
   </link>
-  <joint name="joint_t" type="revolute">
+  <joint name="joint_6_t" type="revolute">
     <origin rpy="1.57079637 0 0" xyz="0 -0.1 -0.098"/>
-    <parent link="link_b"/>
-    <child link="link_t"/>
+    <parent link="link_5_b"/>
+    <child link="link_6_t"/>
     <axis xyz="0 0 1"/>
     <dynamics dampint="0.7" friction="0.7"/>
-    <limit effort="30.0" lower="-3.14159274" upper="3.14159274" velocity="4.36332325"/>
+    <limit effort="100.0" lower="-3.14159274" upper="3.14159274" velocity="4.36332325"/>
   </joint>
-  <!--   <joint name="joint_tool0" type="fixed">
+  <!--joint name="joint_tool0" type="fixed">
       <origin rpy="0 0 0" xyz="0 0 0"/>
-      <parent link="link_6"/>
+      <parent link="link_t"/>
       <child link="tool0"/>
-    </joint>
-   -->
-  <transmission name="transmission_1">
+    </joint-->
+  <transmission name="transmission_1_s">
     <type>transmission_interface/SimpleTransmission</type>
-    <joint name="joint_s">
-      <hardwareInterface>PositionJointInterface</hardwareInterface>
+    <joint name="joint_1_s">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
     </joint>
-    <actuator name="motor_1">
-      <hardwareInterface>PositionJointInterface</hardwareInterface>
+    <actuator name="motor_1_s">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
-  <transmission name="transmission_2">
+  <transmission name="transmission_2_l">
     <type>transmission_interface/SimpleTransmission</type>
-    <joint name="joint_l">
-      <hardwareInterface>PositionJointInterface</hardwareInterface>
+    <joint name="joint_2_l">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
     </joint>
-    <actuator name="motor_2">
-      <hardwareInterface>PositionJointInterface</hardwareInterface>
+    <actuator name="motor_2_l">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
-  <transmission name="transmission_3">
+  <transmission name="transmission_3_u">
     <type>transmission_interface/SimpleTransmission</type>
-    <joint name="joint_u">
-      <hardwareInterface>PositionJointInterface</hardwareInterface>
+    <joint name="joint_3_u">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
     </joint>
-    <actuator name="motor_3">
-      <hardwareInterface>PositionJointInterface</hardwareInterface>
+    <actuator name="motor_3_u">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
-  <transmission name="transmission_4">
+  <transmission name="transmission_4_r">
     <type>transmission_interface/SimpleTransmission</type>
-    <joint name="joint_r">
-      <hardwareInterface>PositionJointInterface</hardwareInterface>
+    <joint name="joint_4_r">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
     </joint>
-    <actuator name="motor_4">
-      <hardwareInterface>PositionJointInterface</hardwareInterface>
+    <actuator name="motor_4_r">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
-  <transmission name="transmission_5">
+  <transmission name="transmission_5_b">
     <type>transmission_interface/SimpleTransmission</type>
-    <joint name="joint_b">
-      <hardwareInterface>PositionJointInterface</hardwareInterface>
+    <joint name="joint_5_b">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
     </joint>
-    <actuator name="motor_5">
-      <hardwareInterface>PositionJointInterface</hardwareInterface>
+    <actuator name="motor_5_b">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
-  <transmission name="transmission_6">
+  <transmission name="transmission_6_t">
     <type>transmission_interface/SimpleTransmission</type>
-    <joint name="joint_t">
-      <hardwareInterface>PositionJointInterface</hardwareInterface>
+    <joint name="joint_6_t">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
     </joint>
-    <actuator name="motor_6">
-      <hardwareInterface>PositionJointInterface</hardwareInterface>
+    <actuator name="motor_6_t">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
   <!-- gazebo -->
   <gazebo>
     <plugin filename="libgazebo_ros_control.so" name="gazebo_ros_control">
-      <robotNamespace>/hc10dt</robotNamespace>
+      <!--robotNamespace>/hc10dt</robotNamespace-->
       <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+      <legacyModeNS>true</legacyModeNS>
     </plugin>
   </gazebo>
   <gazebo reference="base_link">
@@ -271,32 +269,32 @@
     <mu2>0.2</mu2>
     <selfCollide>true</selfCollide>
   </gazebo>
-  <gazebo reference="link_s">
+  <gazebo reference="link_1_s">
     <mu1>0.2</mu1>
     <mu2>0.2</mu2>
     <selfCollide>true</selfCollide>
   </gazebo>
-  <gazebo reference="link_l">
+  <gazebo reference="link_2_l">
     <mu1>0.2</mu1>
     <mu2>0.2</mu2>
     <selfCollide>true</selfCollide>
   </gazebo>
-  <gazebo reference="link_u">
+  <gazebo reference="link_3_u">
     <mu1>0.2</mu1>
     <mu2>0.2</mu2>
     <selfCollide>true</selfCollide>
   </gazebo>
-  <gazebo reference="link_b">
+  <gazebo reference="link_4_b">
     <mu1>0.2</mu1>
     <mu2>0.2</mu2>
     <selfCollide>true</selfCollide>
   </gazebo>
-  <gazebo reference="link_r">
+  <gazebo reference="link_5_r">
     <mu1>0.2</mu1>
     <mu2>0.2</mu2>
     <selfCollide>true</selfCollide>
   </gazebo>
-  <gazebo reference="link_t">
+  <gazebo reference="link_6_t">
     <mu1>0.2</mu1>
     <mu2>0.2</mu2>
     <selfCollide>true</selfCollide>
