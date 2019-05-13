@@ -301,14 +301,11 @@
             <emission>
               <color sid="emission">0.2 0.2 0.2 1</color>
             </emission>
-            <ambient>
-              <color sid="ambient">0 0 0 1</color>
-            </ambient>
             <diffuse>
               <texture texture="link_s_1_png-sampler"/>
             </diffuse>
             <specular>
-              <color sid="specular">0.25 0.25 0.25 1</color>
+              <color sid="specular">0 0 0 1</color>
             </specular>
             <shininess>
               <float sid="shininess">50</float>
@@ -337,9 +334,6 @@
             <emission>
               <color sid="emission">0.2 0.2 0.2 1</color>
             </emission>
-            <ambient>
-              <color sid="ambient">0 0 0 1</color>
-            </ambient>
             <diffuse>
               <texture texture="link_s_2_png-sampler"/>
             </diffuse>
